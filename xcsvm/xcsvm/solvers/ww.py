@@ -52,11 +52,13 @@ class GroupSplitSetupMixin(DefaultSetupMixin):
     more accessible when working with groups.
     """
 
-    def __init__(self, group_count=-1, grouping_criteria=None, folds=1,
+    def __init__(self, group_count=None, grouping_criteria=None, folds=1,
                  grouping_shuffle_sizes=False,
                  force_global_grouping=False,
                  reduce_mem_allocation=False,
                  **kwargs):
+        if group_count is None:
+            group_count = 2 * (self.nr_threads * self._mpi_size)
         self.group_count = int(group_count)
         self.grouping_criteria = {"samples": 0,
                                   "classes": 1,
