@@ -1,0 +1,3 @@
+include LICENCSE
+include README.md
+include xcsvm/tests/data/*.libsvm
