@@ -8,6 +8,8 @@ by *Maximilian Alber, Julian Zimmert, Urun Dogan, Marius Kloft*
 
 **Please cite paper, if you make use of the code!**
 
+**For any questions to and troubles with the code, please, contact me!**
+
 ## How to run this code
 
 The file run.py is an interface for the code.
@@ -78,5 +80,7 @@ optional arguments:
 There are some more options available, though the are mainly for developing purposes.
 
 ## Disclaimer
+
+The code is still in an alpha-state (development)!
 
 The code is released under the MIT license.
