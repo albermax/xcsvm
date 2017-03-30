@@ -1,4 +1,6 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+from distutils.extension import Extension
+from Cython.Build import cythonize
 
 
 def readme():
@@ -8,11 +10,14 @@ def readme():
 requirements = [
     "numpy",
     "scipy",
-    "json",
-    "scipy",
     "cython",
     "sklearn",
     "mpi4py",
+
+    # For profiling.
+    #"cProfile",
+    #"LineProfiler",
+    #"pstats",
 ]
 
 setup(
@@ -34,8 +39,14 @@ setup(
     author="Maxmilian Alber",
     author_email="albermax@github.com",
     license="MIT",
-    packages=["xcsvm"],
+    packages=find_packages(),
     install_requires=requirements,
+    # We use pyximport and compile at runtime.
+    #ext_modules=Extension(name="*",
+    #                      sources=["xcsvm/solvers/cython/*/*.pyx"],
+    #                      extra_link_args=['-fopenmp'],
+    #                      extra_compile_args=['-O3', '-finline-functions',
+    #                                          '-fopenmp']),
     # test_suite='nose.collector',
     # tests_require=['nose']+requirements,
     include_package_data=True,

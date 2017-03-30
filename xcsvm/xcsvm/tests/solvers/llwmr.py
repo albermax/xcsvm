@@ -93,7 +93,7 @@ def do_llwmr_tld(options_update={}, mpi_comm=None,
     reference_results = __REFERENCE_RESULTS__
     if reference is False:
         reference_results = None
-    base._do_test_small_datasets(solver_id, options,
+    base._do_test_large_datasets(solver_id, options,
                                  datasets=datasets,
                                  reference_results=reference_results,
                                  mpi_comm=mpi_comm,

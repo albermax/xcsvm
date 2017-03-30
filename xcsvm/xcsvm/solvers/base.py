@@ -68,7 +68,7 @@ class BaseXMCSolver(object):
             print_intervall=60,
             mode="testing",
             build_dir=None,
-            mpi_comm=None,
+            mpi_comm=None
     ):
         # todo: remove these at teardown?
         self._mpi = umpi.MPIHelper(mpi_comm)
@@ -348,7 +348,9 @@ class BaseXMCSolver(object):
         for i, c in enumerate(self._classes):
             f = os.path.join(dir_name,
                              WEIGHT_FILE_NAME % c)
-            self._W[i] = np.load(f)
+            tmp = np.load(f)
+            assert tmp.shape[0] <= self._W[i].shape[0]
+            self._W[i, :tmp.shape[0]] = tmp
         pass
 
     @staticmethod

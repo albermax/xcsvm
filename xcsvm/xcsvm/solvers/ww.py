@@ -57,8 +57,16 @@ class GroupSplitSetupMixin(DefaultSetupMixin):
                  force_global_grouping=False,
                  reduce_mem_allocation=False,
                  **kwargs):
+
+        if ("cache_alignment" in kwargs and
+            kwargs["cache_alignment"] is True):
+            raise Exception("Cache alignment is compatible "
+                            "with GroupSplitSetupMixin")
+        kwargs["cache_alignment"] = False
+        super(GroupSplitSetupMixin, self).__init__(**kwargs)
+
         if group_count is None:
-            group_count = 2 * (self.nr_threads * self._mpi_size)
+            group_count = 2 * (self.nr_threads * self._mpi.size())
         self.group_count = int(group_count)
         self.grouping_criteria = {"samples": 0,
                                   "classes": 1,
@@ -68,13 +76,6 @@ class GroupSplitSetupMixin(DefaultSetupMixin):
         self.folds = folds
         self.force_global_grouping = force_global_grouping
         self.reduce_mem_allocation = reduce_mem_allocation
-
-        if ("cache_alignment" in kwargs and
-            kwargs["cache_alignment"] is True):
-            raise Exception("Cache alignment is compatible "
-                            "with GroupSplitSetupMixin")
-        kwargs["cache_alignment"] = False
-        super(GroupSplitSetupMixin, self).__init__(**kwargs)
 
     def _W_sparsity(self):
         if not(len(self._W.shape) > 2 and self._global_grouping is True):
@@ -1633,5 +1634,5 @@ class WW_Sparse_Solver(GroupSplitSetupMixin,
                   ("Proc time - s:         %g\n" % proc_s)+\
                   ("Com - net s -proc s:   %g\n" % (self._communication_time - net_s -proc_s))
 
-            self._log.all_info(msg)
+            #self._log.all_info(msg)
         return ret

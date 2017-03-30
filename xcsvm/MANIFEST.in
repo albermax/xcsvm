@@ -1,3 +1,4 @@
-include LICENCSE
+include LICENSE
 include README.md
 include xcsvm/tests/data/*.libsvm
+include xcsvm/solvers/cython/*/*.p*

@@ -1,6 +1,12 @@
 import contextlib
-import cProfile
-from line_profiler import LineProfiler
+try:
+    import cProfile
+except:
+    pass
+try:
+    from line_profiler import LineProfiler
+except:
+    pass
 import numpy as np
 import os
 import pstats
@@ -126,7 +132,20 @@ def setup_cython(dtype, idtype, mpi, mode="testing", build_dir=None):
             import xcsvm.solvers.cython.dtype_f64_idtype_ui64.base
             import xcsvm.solvers.cython.dtype_f64_idtype_ui64.ww
             import xcsvm.solvers.cython.dtype_f64_idtype_ui64.llwmr
-        capture_clib_stdoutput(f, print_only_on_failure=True)
+
+        try:
+            capture_clib_stdoutput(f, print_only_on_failure=True)
+        except ImportError:
+            raise Exception("Cython modules are not correctly"
+                            " compiled or installed."
+                            " Please, make sure that Cython works"
+                            " properly. Further, we use"
+                            " pyximport and compile on the fly,"
+                            " one needs write access"
+                            " on the build directory."
+                            " After a failed compiled it might help"
+                            " to delete the build directory: %s"
+                            % build_dir)
 
         mpi.barrier()
     else:
