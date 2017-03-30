@@ -10,7 +10,7 @@ by *Maximilian Alber, Julian Zimmert, Urun Dogan, Marius Kloft*
 
 **For any questions to and troubles with the code, please, contact me!**
 
-## Ropsitory Structure
+## Repository Structure
 
 The root of this repository contains three folders namex 'xcsvm', 'scripts', and 'examples'.
 The first contains a python package with the code,
@@ -37,15 +37,15 @@ After cloning the repository you can install the package by:
 # Switch into the package directory.
 cd <cloned_repository>/xcsvm
 # Install the package locally.
-pip install .
+pip install --upgrade .
 ```
 
 We tried our best to add all used modules to the requirement list,
 if some are missing please install them and notify us.
 
-Further, this package needs Cython and thus you need to have a working C-compile toolchain.
+This package needs Cython and for that you need to have a working C-compile toolchain installed.
 
-Finally, one needs to install mpi4py to use this code.
+To use mpi4py you need to install OpenMPI.
 
 ## How to run this code
 
