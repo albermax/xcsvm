@@ -7,13 +7,13 @@
 
 
 ## Definitions #################################################################
-TRAIN_DATA = "../xcsvm/xcsvm/tests/data/lshtc1_dryrun_task1_tfidf_l2_norm_applied.train.libsvm"
-TEST_DATA = "../xcsvm/xcsvm/tests/data/lshtc1_dryrun_task1_tfidf_l2_norm_applied.test.libsvm"
+TRAIN_DATA="../xcsvm/xcsvm/tests/data/lshtc1_dryrun_task1_tfidf_l2_norm_applied.train.libsvm"
+TEST_DATA="../xcsvm/xcsvm/tests/data/lshtc1_dryrun_task1_tfidf_l2_norm_applied.test.libsvm"
 
 # The following python interpreter should have xcsvm installed.
 # If not used the run.py script will try to run the source code directly.
 # In this case all the needed packages need to be installed.
-PYTHON = "/home/alber/python_virtualenv/bin/python"
+PYTHON="/home/alber/python_virtualenv/bin/python"
 
 
 ## Training and storing the model ##############################################
