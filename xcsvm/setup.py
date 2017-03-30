@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
-from distutils.extension import Extension
-from Cython.Build import cythonize
+$from distutils.extension import Extension
+#from Cython.Build import cythonize
 
 
 def readme():
