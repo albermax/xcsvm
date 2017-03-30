@@ -98,6 +98,8 @@ class BaseXMCSolver(object):
         self.mode = mode
 
         self._log.info("Solver uses %s mode." % mode)
+        self._log.info("Loading Cython. At the first run this compiles"
+                       " the binaries and might take long.")
         ubase.setup_cython(self.dtype, self.idtype,
                            self._mpi,
                            mode=mode, build_dir=build_dir)
