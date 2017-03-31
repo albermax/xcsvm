@@ -5,6 +5,7 @@
 
 # The ipython notebook script in this folder contains the same examples including the outputs!
 
+# To compare the timing of the different runs one needs to wait until the cpu is cool again.
 
 ## Definitions #################################################################
 TRAIN_DATA="../xcsvm/xcsvm/tests/data/lshtc1_dryrun_task1_tfidf_l2_norm_applied.train.libsvm"
@@ -25,13 +26,16 @@ $PYTHON ../scripts/run.py ww_sparse --test_data $TEST_DATA --model_dir ./model
 
 
 ## Training and testing in one shot ############################################
+sleep 60
 $PYTHON ../scripts/run.py ww_sparse --train_data $TRAIN_DATA --test_data $TEST_DATA --options folds=5 group_count=64 -v 1
 
 
 ## Training with 2 threads #####################################################
+sleep 60
 $PYTHON ../scripts/run.py ww_sparse --train_data $TRAIN_DATA --test_data $TEST_DATA --options nr_threads=2 folds=5 group_count=64 -v 1
 
 
 ## Training with 2 processes ###################################################
 # Requires openmpi.
+sleep 60
 mpiexec -n 2 $PYTHON ../scripts/run.py ww_sparse --train_data $TRAIN_DATA --test_data $TEST_DATA --options folds=5 group_count=64 -v 1
