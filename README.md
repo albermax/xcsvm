@@ -20,9 +20,9 @@ and the last contains example scripts.
 ## Usage
 
 First, please, clone this repository.
-Then you can either just go ahead and use the code or package and install it.
+Then you can either just go ahead and use the code or install it (recommended).
 
-If you don't install the code scripts/run.py will try to set the python path to access the
+If you don't install the code, scripts/run.py will try to set the python path to access the
 code files. In this case you need to make sure that all needed packages are installed.
 At least the following are required: numpy, scipy, cython, sklearn, and [mpi4py](https://mpi4py.scipy.org/docs/usrman/install.html).
 
@@ -49,8 +49,10 @@ How to install: [mpi4py](https://mpi4py.scipy.org/docs/usrman/install.html).
 
 ### Examples
 
-In the folder 'examples' you can find an IPython notebook that shows some basic examples on how to use the solver.
-There is also a bash scripts that contains the same commands, yet without output.
+[This notebook](https://github.com/albermax/xcsvm/blob/master/examples/examples.ipynb) shows you how to use the code. You can find it in the the folder 'examples'.
+There is also a bash script that contains the same commands, yet without the shell output.
+
+Please, note that in both cases you need to set the 'PYTHON' variable to the python interpreter you use. (If you go along without an installation just use 'PYTHON="/usr/bin/python"')
 
 ## How to run this code
 
