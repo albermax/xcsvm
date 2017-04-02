@@ -24,7 +24,7 @@ Then you can either just go ahead and use the code or package and install it.
 
 If you don't install the code scripts/run.py will try to set the python path to access the
 code files. In this case you need to make sure that all needed packages are installed.
-At least the following are required: numpy, scipy, cython, sklearn, and mpi4py.
+At least the following are required: numpy, scipy, cython, sklearn, and [mpi4py](https://mpi4py.scipy.org/docs/usrman/install.html).
 
 **This code was developed with Linux 16.04 and Python 2.7.**
 **If you use it on another system you might run into troubles.**
@@ -45,7 +45,12 @@ if some are missing please install them and notify us.
 
 This package needs Cython and for that you need to have a working C-compile toolchain installed.
 
-To use mpi4py you need to install OpenMPI.
+How to install: [mpi4py](https://mpi4py.scipy.org/docs/usrman/install.html).
+
+### Examples
+
+In the folder 'examples' you can find an IPython notebook that shows some basic examples on how to use the solver.
+There is also a bash scripts that contains the same commands, yet without output.
 
 ## How to run this code
 
