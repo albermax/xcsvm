@@ -14,7 +14,7 @@ TEST_DATA="../xcsvm/xcsvm/tests/data/lshtc1_dryrun_task1_tfidf_l2_norm_applied.t
 # The following python interpreter should have xcsvm installed.
 # If not used the run.py script will try to run the source code directly.
 # In this case all the needed packages need to be installed.
-PYTHON="/usr/bin/python"
+PYTHON="/usr/bin/python2.7"
 
 
 ## Training and storing the model ##############################################
