@@ -137,7 +137,7 @@ def test_C_1_ld():
 
 @base.testattr("slow")
 def test_C_10_sd():
-    do_ww_tsd({"C": 10**1})
+    do_ww_tsd({"C": 10**1, "max_iter": 10000})
 
 
 @base.testattr("slow")

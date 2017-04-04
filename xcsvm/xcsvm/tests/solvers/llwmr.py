@@ -137,12 +137,12 @@ def test_C_1_ld():
 
 @base.testattr("slow")
 def test_C_10_sd():
-    do_llwmr_tsd({"C": 10**1})
+    do_llwmr_tsd({"C": 10**1, "max_iter": 10000})
 
 
 @base.testattr("slow")
 def test_C_10_ld():
-    do_llwmr_tld({"C": 10**1})
+    do_llwmr_tld({"C": 10**1, "max_iter": 10000})
 
 
 ###############################################################################
